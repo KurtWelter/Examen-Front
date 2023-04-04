@@ -1,0 +1,24 @@
+.img {
+  width: 350px;
+  height: 350px;
+  contain: 20px;
+}
+.p {
+  text-align: center;
+  color: #212529;
+  font-size: 20px;
+  font: 20px "Open Sans", sans-serif;
+  margin: 0px, 0px, 16px;
+  padding: 20px;
+}
+.button {
+  font-variant: primary;
+  font-size: 20px;
+  font: 20px "Open Sans", sans-serif;
+  margin: 0px, 0px, 16px;
+  padding: 20px;
+}
+.title {
+  font: 10px "Open Sans", sans-serif;
+  text-align: left;
+}

@@ -1,10 +1,16 @@
-import "./App.css";
-
+import Navbar from "./componets/Navbar/Navbar";
+import Home from "./componet/Home/Home";
+import Perfil from "./componett/Perfil/Perfil";
 function App() {
   return (
     <div className="App">
+      <Navbar />
       <div className="content">
-        <h1>App component</h1>
+        <Home />
+
+        <div className="perfil">
+          <Perfil />
+        </div>
       </div>
     </div>
   );
