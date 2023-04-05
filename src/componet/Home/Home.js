@@ -16,7 +16,9 @@ const Home = () => {
                 <Card.Body>
                   <Card.Title class={`${s.title}`}>Purina </Card.Title>
                   <Card.Text>One +Plus Large Breed Adulto $24.900</Card.Text>
-                  <Button class={`${s.button}`}>Comprar</Button>
+                  <Button class={`${s.button}`} type="submit">
+                    Comprar
+                  </Button>
                 </Card.Body>
               </Card>
             </div>
@@ -28,7 +30,9 @@ const Home = () => {
                 <Card.Body>
                   <Card.Title class={`${s.title}`}>Pedigree </Card.Title>
                   <Card.Text>Pedigree Adulto 12/2K $18.990</Card.Text>
-                  <Button class={`${s.button}`}>Comprar</Button>
+                  <Button class={`${s.button}`} type="submit">
+                    Comprar
+                  </Button>
                 </Card.Body>
               </Card>
             </div>
@@ -45,7 +49,9 @@ const Home = () => {
                   <Card.Text>
                     Champion Dog Recetas de Pate sabor Pollo 315g $7.900
                   </Card.Text>
-                  <Button class={`${s.button}`}>Comprar</Button>
+                  <Button class={`${s.button}`} type="submit">
+                    Comprar
+                  </Button>
                 </Card.Body>
               </Card>
             </div>
@@ -62,7 +68,9 @@ const Home = () => {
                     American Journey Protein & Grains Salmon, Brown Rice &
                     Vegetables Recipe Dry Dog Food $27.900
                   </Card.Text>
-                  <Button class={`${s.button}`}>Comprar</Button>
+                  <Button class={`${s.button}`} type="submit">
+                    Comprar
+                  </Button>
                 </Card.Body>
               </Card>
             </div>
@@ -81,7 +89,9 @@ const Home = () => {
                 <Card.Body>
                   <Card.Title class={`${s.title}`}>Purina </Card.Title>
                   <Card.Text>Dry Cat Food para 3-6 meses $18.900</Card.Text>
-                  <Button class={`${s.button}`}>Comprar</Button>
+                  <Button class={`${s.button}`} type="submit">
+                    Comprar
+                  </Button>
                 </Card.Body>
               </Card>
             </div>
@@ -93,7 +103,9 @@ const Home = () => {
                 <Card.Body>
                   <Card.Title class={`${s.title}`}>Meow Mix </Card.Title>
                   <Card.Text>Comida de gato adulto $24.900</Card.Text>
-                  <Button class={`${s.button}`}>Comprar</Button>
+                  <Button class={`${s.button}`} type="submit">
+                    Comprar
+                  </Button>
                 </Card.Body>
               </Card>
             </div>
@@ -107,7 +119,9 @@ const Home = () => {
                   <Card.Text>
                     Sobres Whiskas de sabor Pollo, 12 sobres $17.900
                   </Card.Text>
-                  <Button class={`${s.button}`}>Comprar</Button>
+                  <Button class={`${s.button}`} type="submit">
+                    Comprar
+                  </Button>
                 </Card.Body>
               </Card>
             </div>
@@ -121,7 +135,9 @@ const Home = () => {
                   <Card.Text>
                     Alimento humedo sabor Chiken & Cheese Entree $7.500{" "}
                   </Card.Text>
-                  <Button class={`${s.button}`}>Comprar</Button>
+                  <Button class={`${s.button}`} type="submit">
+                    Comprar
+                  </Button>
                 </Card.Body>
               </Card>
             </div>
