@@ -1,27 +1,28 @@
 import { Button, Form } from "react-bootstrap";
-const iniciarsecion = () => {
+
+const IniciarSesion = () => {
   return (
     <div>
       <Form>
-        <Form.Group>
+        <Form.Group controlId="formBasicEmail">
           <Form.Label>Email</Form.Label>
-          <Form.Control type="Email" placeholder="Ejemplo@gmail.com" />
+          <Form.Control type="email" placeholder="Ejemplo@gmail.com" />
           <Form.Text className="text-muted">
-            Nunca compartiremos tus datos personales, confia en nosotros
+            Nunca compartiremos tus datos personales, confía en nosotros.
           </Form.Text>
         </Form.Group>
-      </Form>
-      <Form>
-        <Form.Group>
+
+        <Form.Group controlId="formBasicPassword">
           <Form.Label>Password</Form.Label>
-          <Form.Control type="Password" placeholder="Password" />
+          <Form.Control type="password" placeholder="Password" />
         </Form.Group>
+
         <Button variant="secondary" type="submit">
-          Login
+          Iniciar Sesión
         </Button>
       </Form>
     </div>
   );
 };
 
-export default iniciarsecion;
+export default IniciarSesion;

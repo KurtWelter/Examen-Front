@@ -1,7 +1,6 @@
-import s from "./Perfil.module.css";
 const Perfil = () => {
   return (
-    <table class="table">
+    <table className="table">
       <thead>
         <tr>
           <th scope="col">#</th>
@@ -13,20 +12,21 @@ const Perfil = () => {
       <tbody>
         <tr>
           <th scope="row">1</th>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>John Doe</td>
+          <td>Product A</td>
+          <td>$24.900</td>
         </tr>
         <tr>
           <th scope="row">2</th>
-          <td></td>
-          <td></td>
-          <td></td>
+          <td>Jane Smith</td>
+          <td>Product B</td>
+          <td>$17.900</td>
         </tr>
         <tr>
           <th scope="row">3</th>
-          <td colspan="2"></td>
-          <td></td>
+          <td>Smith</td>
+          <td>Product C</td>
+          <td>$7.500</td>
         </tr>
       </tbody>
     </table>
