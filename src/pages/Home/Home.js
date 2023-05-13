@@ -1,159 +1,114 @@
 import s from "./Home.module.css";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
+import { useCarroDeCompras } from "../../context/CarroDeComprasContext";
+
+const productos = [
+  {
+    id: "1",
+    nombre: "Purina",
+    descripcion: "One +Plus Large Breed Adulto",
+    precio: 24900,
+    imagenURL: "/assets/img/perro.jpg",
+    cantidad: 1,
+  },
+  {
+    id: "2",
+    nombre: "Pedigree",
+    descripcion: "Pedigree Adulto 12/2K",
+    precio: 18900,
+    imagenURL: "/assets/img/pedigree.PNG",
+    cantidad: 1,
+  },
+  {
+    id: "3",
+    nombre: "Champion Dog",
+    descripcion: "Champion Dog Recetas de Pate sabor Pollo 315g",
+    precio: 7900,
+    imagenURL: "/assets/img/championdog.jpg",
+    cantidad: 1,
+  },
+  {
+    id: "4",
+    nombre: "American Journey ",
+    descripcion:
+      "American Journey Protein & Grains Salmon, Brown Rice & Vegetables Recipe Dry Dog Food",
+    precio: 27900,
+    imagenURL: "/assets/img/american.jpg",
+    cantidad: 1,
+  },
+  {
+    id: "5",
+    nombre: "Purina",
+    descripcion: "Dry Cat Food para 3-6 meses",
+    precio: 18900,
+    imagenURL: "/assets/img/gato.png",
+    cantidad: 1,
+  },
+  {
+    id: "6",
+    nombre: "Meow Mix",
+    descripcion: "Comida de gato adulto",
+    precio: 24900,
+    imagenURL: "/assets/img/gato2.jpg",
+    cantidad: 1,
+  },
+  {
+    id: "7",
+    nombre: "Whiskas",
+    descripcion: "Sobres Whiskas de sabor Pollo, 12 sobres",
+    precio: 17900,
+    imagenURL: "/assets/img/whiskas.jpg",
+    cantidad: 1,
+  },
+  {
+    id: "8",
+    nombre: "Purina",
+    descripcion: "Alimento humedo sabor Chiken & Cheese Entree",
+    precio: 7500,
+    imagenURL: "/assets/img/purina.png",
+    cantidad: 1,
+  },
+];
+
 const Home = () => {
+  const { agregarItem } = useCarroDeCompras();
   return (
     <div className="home">
       <h2 className="Heading-title pl-3 mt-3">
-        <p className={`${s.p}`}>Alimentos Perros</p>
+        <p className={`${s.p}`}>Alimentos</p>
       </h2>
       <div className="container overflow-hidden text-center">
-        <div className="row gy-5">
-          <div className="col-6 col-xs-12">
-            <div className="p-3">
-              <Card style={{ color: "#000" }}>
-                <Card.Img className={`${s.img}`} src="/assets/img/perro.jpg" />
-                <Card.Body>
-                  <Card.Title className={`${s.title}`}>Purina </Card.Title>
-                  <Card.Text>One +Plus Large Breed Adulto $24.900</Card.Text>
-                  <Button className={`${s.button}`} type="submit">
-                    Comprar
-                  </Button>
-                </Card.Body>
-              </Card>
-            </div>
-          </div>
-          <div className="col-6 col-xs-12">
-            <div className="p-3">
-              <Card style={{ color: "#000" }}>
-                <Card.Img
-                  className={`${s.img}`}
-                  src="/assets/img/pedigree.PNG"
-                />
-                <Card.Body>
-                  <Card.Title className={`${s.title}`}>Pedigree </Card.Title>
-                  <Card.Text>Pedigree Adulto 12/2K $18.990</Card.Text>
-                  <Button className={`${s.button}`} type="submit">
-                    Comprar
-                  </Button>
-                </Card.Body>
-              </Card>
-            </div>
-          </div>
-          <div className="col-6 col-xs-12">
-            <div className="p-3">
-              <Card style={{ color: "#000" }}>
-                <Card.Img
-                  className={`${s.img}`}
-                  src="/assets/img/championdog.jpg"
-                />
-                <Card.Body>
-                  <Card.Title className={`${s.title}`}>
-                    Champion Dog{" "}
-                  </Card.Title>
-                  <Card.Text>
-                    Champion Dog Recetas de Pate sabor Pollo 315g $7.900
-                  </Card.Text>
-                  <Button className={`${s.button}`} type="submit">
-                    Comprar
-                  </Button>
-                </Card.Body>
-              </Card>
-            </div>
-          </div>
-          <div className="col-6 col-xs-12">
-            <div className="p-3">
-              <Card style={{ color: "#000" }}>
-                <Card.Img
-                  className={`${s.img}`}
-                  src="/assets/img/american.jpg"
-                />
-                <Card.Body>
-                  <Card.Title className={`${s.title}`}>
-                    American Journey{" "}
-                  </Card.Title>
-                  <Card.Text>
-                    American Journey Protein & Grains Salmon, Brown Rice &
-                    Vegetables Recipe Dry Dog Food $27.900
-                  </Card.Text>
-                  <Button className={`${s.button}`} type="submit">
-                    Comprar
-                  </Button>
-                </Card.Body>
-              </Card>
-            </div>
-          </div>
-        </div>
-      </div>
-      <h2 className="Heading-title pl-3 mt-3">
-        <p className={`${s.p}`}>Alimentos Gatos</p>
-      </h2>
-      <div className="container overflow-hidden text-center">
-        <div className="row gy-5">
-          <div className="col-6 col-xs-12">
-            <div className="p-3">
-              <Card style={{ color: "#000" }}>
-                <Card.Img className={`${s.img}`} src="/assets/img/gato.png" />
-                <Card.Body>
-                  <Card.Title className={`${s.title}`}>Purina </Card.Title>
-                  <Card.Text>Dry Cat Food para 3-6 meses $18.900</Card.Text>
-                  <Button className={`${s.button}`} type="submit">
-                    Comprar
-                  </Button>
-                </Card.Body>
-              </Card>
-            </div>
-          </div>
-          <div className="col-6 col-xs-12">
-            <div className="p-3">
-              <Card style={{ color: "#000" }}>
-                <Card.Img className={`${s.img}`} src="/assets/img/gato2.jpg" />
-                <Card.Body>
-                  <Card.Title className={`${s.title}`}>Meow Mix </Card.Title>
-                  <Card.Text>Comida de gato adulto $24.900</Card.Text>
-                  <Button className={`${s.button}`} type="submit">
-                    Comprar
-                  </Button>
-                </Card.Body>
-              </Card>
-            </div>
-          </div>
-          <div className="col-6 col-xs-12">
-            <div className="p-3">
-              <Card style={{ color: "#000" }}>
-                <Card.Img
-                  className={`${s.img}`}
-                  src="/assets/img/whiskas.jpg"
-                />
-                <Card.Body>
-                  <Card.Title className={`${s.title}`}>Whiskas </Card.Title>
-                  <Card.Text>
-                    Sobres Whiskas de sabor Pollo, 12 sobres $17.900
-                  </Card.Text>
-                  <Button className={`${s.button}`} type="submit">
-                    Comprar
-                  </Button>
-                </Card.Body>
-              </Card>
-            </div>
-          </div>
-          <div className="col-6 col-xs-12">
-            <div className="p-3">
-              <Card style={{ color: "#000" }}>
-                <Card.Img className={`${s.img}`} src="/assets/img/purina.png" />
-                <Card.Body>
-                  <Card.Title className={`${s.title}`}>Purina </Card.Title>
-                  <Card.Text>
-                    Alimento humedo sabor Chiken & Cheese Entree $7.500{" "}
-                  </Card.Text>
-                  <Button className={`${s.button}`} type="submit">
-                    Comprar
-                  </Button>
-                </Card.Body>
-              </Card>
-            </div>
-          </div>
-        </div>
+        <Container>
+          <Row className="g-2">
+            {productos.map((producto) => {
+              return (
+                <Col xs={12} sm={6} md={4} lg={3} key={producto.id}>
+                  <Card style={{ color: "#000" }}>
+                    <Card.Img className={`${s.img}`} src={producto.imagenURL} />
+                    <Card.Body>
+                      <Card.Title className={`${s.title}`}>
+                        {producto.nombre}
+                      </Card.Title>
+                      <Card.Text>
+                        {producto.descripcion} ${producto.precio}
+                      </Card.Text>
+                      <Button
+                        onClick={() => {
+                          agregarItem(producto);
+                        }}
+                        className={`${s.button}`}
+                        type="submit"
+                      >
+                        Comprar
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              );
+            })}
+          </Row>
+        </Container>
       </div>
     </div>
   );

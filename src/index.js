@@ -9,6 +9,9 @@ import Navbar from "./components/Navbar/Navbar";
 import Layout from "./Layout";
 import Perfil from "./pages/Perfil/Perfil";
 import IniciarSesion from "./pages/IniciarSesion/IniciarSesion";
+import AboutUs from "./pages/AboutUs/AboutUs";
+import Compras from "./pages/CarroDeCompras/Compras";
+import CarroDeComprasContextProvider from "./context/CarroDeComprasContext";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -30,6 +33,14 @@ const router = createBrowserRouter([
         path: "/iniciar-sesion",
         element: <IniciarSesion />,
       },
+      {
+        path: "/about",
+        element: <AboutUs />,
+      },
+      {
+        path: "/cart",
+        element: <Compras />,
+      },
     ],
   },
   //{
@@ -41,6 +52,8 @@ const router = createBrowserRouter([
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <CarroDeComprasContextProvider>
+      <RouterProvider router={router} />
+    </CarroDeComprasContextProvider>
   </React.StrictMode>
 );
