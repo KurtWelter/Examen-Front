@@ -27,9 +27,19 @@ export default function CarroDeComprasContextProvider({ children }) {
 
     if (index !== -1) {
       const listaActualizada = [...items];
-      listaActualizada.splice(index, 1);
-      setItems(listaActualizada);
+      if (listaActualizada[index].cantidad > 1) {
+        listaActualizada[index].cantidad -= 1;
+        setItems(listaActualizada);
+      }
     }
+  };
+
+  const calcularTotal = () => {
+    const total = items.reduce((accumulator, item) => {
+      return accumulator + item.precio * item.cantidad;
+    }, 0);
+
+    return total;
   };
 
   useEffect(() => {
@@ -38,7 +48,7 @@ export default function CarroDeComprasContextProvider({ children }) {
 
   return (
     <Context.Provider
-      value={{ items, agregarItem, eliminarItem, disminuirItem }}
+      value={{ items, agregarItem, eliminarItem, disminuirItem, calcularTotal }}
     >
       <>{children}</>
     </Context.Provider>
