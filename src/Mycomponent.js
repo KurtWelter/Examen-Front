@@ -10,7 +10,8 @@ function MyComponent() {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/api/usuarios/");
+      const response = await axios.get("http://127.0.0.1:8000/usuarios/");
+      console.log(response);
       setData(response.data);
     } catch (error) {
       console.error("Error fetching data:", error);
@@ -20,15 +21,16 @@ function MyComponent() {
   const handleRegistration = async () => {
     const userData = {
       // Provide the user data here
-      nombre: "John",
+      id: 4444,
+      nombre: "KKK",
       apellido: "Doe",
-      correo: "john.doe@example.com",
+      correo: "n.doe@example.com",
       contrasena: "password",
     };
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/registro",
+        "http://127.0.0.1:8000/usuarios/",
         userData
       );
       console.log(response.data);

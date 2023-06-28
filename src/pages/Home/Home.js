@@ -2,6 +2,8 @@ import s from "./Home.module.css";
 import { Button, Card, Container, Row, Col } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { useCarroDeCompras } from "../../context/CarroDeComprasContext";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const productos = [
   {
@@ -72,6 +74,36 @@ const productos = [
 ];
 
 const Home = () => {
+  const [data, setData] = useState({ alimentoPerro: [], alimentoGato: [] });
+
+  useEffect(() => {
+    getAlimentoPerro();
+    getAlimentoGato();
+  }, []);
+  console.log(data);
+
+  const getAlimentoPerro = async () => {
+    try {
+      const response = await axios.get(
+        "http://127.0.0.1:8000/alimentos-perros/"
+      );
+      //console.log(response);
+      setData((prev) => ({ ...prev, alimentoPerro: response.data }));
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
+  const getAlimentoGato = async () => {
+    try {
+      const response = await axios.get(
+        "http://127.0.0.1:8000/alimentos-gatos/"
+      );
+      /*console.log(response);*/
+      setData((prev) => ({ ...prev, alimentoGato: response.data }));
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
   const { agregarItem } = useCarroDeCompras();
   return (
     <div className="home">
@@ -81,7 +113,33 @@ const Home = () => {
       <div className="container overflow-hidden text-center">
         <Container>
           <Row className="g-2">
-            {productos.map((producto) => {
+            {data.alimentoPerro.map((producto) => {
+              return (
+                <Col xs={12} sm={6} md={4} lg={3} key={producto.id}>
+                  <Card style={{ color: "#000" }}>
+                    <Card.Img className={`${s.img}`} src={producto.imagenURL} />
+                    <Card.Body>
+                      <Card.Title className={`${s.title}`}>
+                        {producto.nombre}
+                      </Card.Title>
+                      <Card.Text>
+                        {producto.descripcion} ${producto.precio}
+                      </Card.Text>
+                      <Button
+                        onClick={() => {
+                          agregarItem(producto);
+                        }}
+                        className={`${s.button}`}
+                        type="submit"
+                      >
+                        Comprar
+                      </Button>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              );
+            })}
+            {data.alimentoGato.map((producto) => {
               return (
                 <Col xs={12} sm={6} md={4} lg={3} key={producto.id}>
                   <Card style={{ color: "#000" }}>
