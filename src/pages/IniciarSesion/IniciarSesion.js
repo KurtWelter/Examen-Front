@@ -1,11 +1,25 @@
 import { Button, Form, Container, Image, Modal } from "react-bootstrap";
 import { useState } from "react";
+import axios from "axios";
+
+const initialState = {
+  correo: "",
+  contrasena: "",
+};
 
 const IniciarSesion = () => {
   const [showAlert, setShowAlert] = useState(true);
+  const [formData, setFormData] = useState(initialState);
 
   const handleCloseAlert = () => {
     setShowAlert(false);
+  };
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setFormData((prev) => {
+      return { ...prev, [name]: value };
+    });
   };
 
   return (
@@ -44,7 +58,11 @@ const IniciarSesion = () => {
           <Form action="http://localhost:3000/api/registro" method="POST">
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email</Form.Label>
-              <Form.Control type="email" placeholder="Ejemplo@gmail.com" />
+              <Form.Control
+                name="correo"
+                type="email"
+                placeholder="Ejemplo@gmail.com"
+              />
               <Form.Text className="text-muted">
                 Nunca compartiremos tus datos personales, confía en nosotros.
               </Form.Text>
@@ -52,7 +70,11 @@ const IniciarSesion = () => {
 
             <Form.Group controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
-              <Form.Control type="password" placeholder="Password" />
+              <Form.Control
+                name="contrasena"
+                type="password"
+                placeholder="Password"
+              />
             </Form.Group>
 
             <div className="d-grid gap-2" style={{ marginTop: "5mm" }}>
