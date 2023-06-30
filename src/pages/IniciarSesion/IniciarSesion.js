@@ -72,7 +72,7 @@ const IniciarSesion = () => {
               height={250}
             />
           </div>
-          <Form action="http://localhost:3000/api/registro" method="POST">
+          <Form>
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email</Form.Label>
               <Form.Control
