@@ -21,7 +21,7 @@ const IniciarSesion = () => {
       return { ...prev, [name]: value };
     });
   };
-  const handleRegistration = async (event) => {
+  const handleLogin = async (event) => {
     event.preventDefault();
     const id = uuidv4();
     const data = { id: id, ...formData };
@@ -76,6 +76,7 @@ const IniciarSesion = () => {
             <Form.Group controlId="formBasicEmail">
               <Form.Label>Email</Form.Label>
               <Form.Control
+                onChange={handleChange}
                 name="correo"
                 type="email"
                 placeholder="Ejemplo@gmail.com"
@@ -88,6 +89,7 @@ const IniciarSesion = () => {
             <Form.Group controlId="formBasicPassword">
               <Form.Label>Password</Form.Label>
               <Form.Control
+                onChange={handleChange}
                 name="contrasena"
                 type="password"
                 placeholder="Password"
@@ -95,7 +97,7 @@ const IniciarSesion = () => {
             </Form.Group>
 
             <div className="d-grid gap-2" style={{ marginTop: "5mm" }}>
-              <Button variant="secondary" type="submit">
+              <Button onClick={handleLogin} variant="secondary" type="submit">
                 Iniciar Sesión
               </Button>
             </div>
