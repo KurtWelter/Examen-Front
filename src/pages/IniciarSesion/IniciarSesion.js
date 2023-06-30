@@ -21,6 +21,23 @@ const IniciarSesion = () => {
       return { ...prev, [name]: value };
     });
   };
+  const handleRegistration = async (event) => {
+    event.preventDefault();
+    const id = uuidv4();
+    const data = { id: id, ...formData };
+    console.log(data);
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/usuarios/",
+        data
+      );
+      console.log(response.data);
+      // Handle the response
+    } catch (error) {
+      console.error("Error registering user:", error);
+      // Handle the error
+    }
+  };
 
   return (
     <Container className="d-flex justify-content-center align-items-center vh-100">
