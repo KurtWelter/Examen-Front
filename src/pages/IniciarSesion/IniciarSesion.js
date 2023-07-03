@@ -28,7 +28,7 @@ const IniciarSesion = () => {
     console.log(data);
     try {
       const response = await axios.post(
-        "http://127.0.0.1:8000/usuarios/",
+        "http://127.0.0.1:8000/sesiones/",
         data
       );
       console.log(response.data);
