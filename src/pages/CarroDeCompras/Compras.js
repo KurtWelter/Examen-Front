@@ -7,6 +7,9 @@ const Compras = () => {
   const total = items.reduce((accumulator, item) => {
     return accumulator + item.precio * item.cantidad;
   }, 0);
+  const handleCompra = () => {
+    alert("¡Se han comprado los productos!");
+  };
   return (
     <table className="table">
       <thead>
@@ -54,6 +57,7 @@ const Compras = () => {
           <td colSpan="2"></td>
           <th>Total:</th>
           <td>{total}</td>
+          <Button onClick={handleCompra}>Comprar</Button>
         </tr>
       </tfoot>
     </table>

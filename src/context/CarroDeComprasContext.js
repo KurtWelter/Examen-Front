@@ -35,9 +35,16 @@ export default function CarroDeComprasContextProvider({ children }) {
   };
 
   const calcularTotal = () => {
-    const total = items.reduce((accumulator, item) => {
+    const subtotal = items.reduce((accumulator, item) => {
       return accumulator + item.precio * item.cantidad;
     }, 0);
+
+    let total = subtotal;
+
+    if (subtotal > 30000) {
+      const descuento = subtotal * 0.05;
+      total = subtotal - descuento;
+    }
 
     return total;
   };
